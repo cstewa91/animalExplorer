@@ -15,7 +15,7 @@
   - By default, when you get into the html folder, the index.html file should run
   - If animals appear, it is working correct.
 
-# Feature set 2
+# Feature set 2 Node Server
 ## Feature set 2-1
 - Serve the data up via Node
 - Open the webserver.js file
@@ -50,3 +50,31 @@
   - run the server and test the code by going directly to ```localhost:3000/data``` to see if you get appropriate JSON
 ## Feature set 2-3
 - change your ajax URL to ```localhost:3000/data``` and see if your data loads appropriately.
+
+# Feature set 3 PHP server
+## Feature set 3-1
+- In the data.php file (in the html folder)
+- load the data from test.js via an file_get_contents('test.js') into a variable called $animalsJSON
+- convert the $animalsJSON into a PHP variable 
+  - use json_decode
+  - store it into $animals.  
+  - be sure to give it a second variable of true to decode it into associative arrays rather than php standard objects
+  - we don't need to do this normally, we're having fun with php!  loading in data via json!
+
+- let's sort the data, use this code
+```
+function sortFunction($a, $b) {
+  return $a["name"] <=> $b["name"];
+}
+usort($animals, "sortFunction");
+```
+  - very similar to the JS sort function, don't you think?
+- encode the data back into json 
+  - use json_encode 
+  - save into the variable $sortedAnimals
+- print the $sortedAnimals variable
+- run the data.php file to make sure it shows the data correctly
+## Feature set 3-1
+- go to your index.html file
+  - change your ajax destination to ```data.php```
+  - make sure it works!
