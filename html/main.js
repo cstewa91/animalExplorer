@@ -7,7 +7,7 @@ function initializeApp(){
 
 function loadData(){
 	const options = {
-		url: 'test.js',
+		url: 'data.php',
 		dataType: 'json',
 		method: 'get',
 		success: loadAllAnimals
@@ -16,6 +16,7 @@ function loadData(){
 }
 
 function loadAllAnimals( animalData ){
+	console.log(animalData)
 	for(let i=0; i< animalData.length; i++){
 		renderOneAnimal( animalData[i]);
 	}
